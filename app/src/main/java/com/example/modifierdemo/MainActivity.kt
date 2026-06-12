@@ -1,5 +1,9 @@
 package com.example.modifierdemo
 
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Alignment
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -8,7 +12,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.border
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
@@ -60,7 +63,15 @@ fun DemoScreen(modifier: Modifier = Modifier) {
 
         Spacer(Modifier.height(16.dp))
 
-        CustomImage(R.drawable.vacation)
+        val imageModifier = Modifier
+            .padding(16.dp)
+            .width(270.dp)
+            .clip(RoundedCornerShape(20.dp))
+
+        CustomImage(
+            R.drawable.vacation,
+            imageModifier
+        )
     }
 }
 
